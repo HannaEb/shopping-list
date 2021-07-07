@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Product extends React.Component {
+class Unit extends React.Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class Product extends React.Component {
     }
 }
 
-export default Product;
+export default Unit;

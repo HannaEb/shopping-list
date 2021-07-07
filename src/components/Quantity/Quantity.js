@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Product extends React.Component {
+class Quantity extends React.Component {
     render() {
         return (
             <div>
-                {this.props.name}
+                {this.props.value}
             </div>
         )
     }
 }
 
-export default Product;
+export default Quantity;
