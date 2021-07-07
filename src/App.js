@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import ListItem from './components/ListItem/ListItem'
+import ToggleableListItemForm from './components/ToggleableListItemForm/ToggleableListItemForm'
+import List from './components/List/List'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ListItem />
+        <ToggleableListItemForm />
+        <List />
       </div>
     );
   }

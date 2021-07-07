@@ -34,6 +34,9 @@ class ListItemForm extends React.Component {
                             <option>Other</option>
                         </select>
                     </div>
+                    <button>
+                        Add
+                    </button>
                 </form>
             </div>
         )
