@@ -34,7 +34,7 @@ class App extends React.Component {
 
   addListItem(listItem) {
     let newListItem = {
-      quantity: listItem.quanity,
+      quantity: listItem.quantity,
       unit: listItem.unit,
       product: listItem.product,
       category: listItem.category,

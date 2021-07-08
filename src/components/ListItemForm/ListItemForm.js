@@ -50,7 +50,7 @@ class ListItemForm extends React.Component {
                     <div>
                         <label>Quantity</label>
                         <input 
-                            type='number' 
+                            type='text' 
                             value={this.state.quantity} 
                             onChange={this.handleQuantityChange}
                             />
