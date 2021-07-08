@@ -23,11 +23,32 @@ class App extends React.Component {
         }
       ]
     }
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.addListItem = this.addListItem.bind(this);
   }
+
+  handleFormSubmit(listItem) {
+      this.addListItem(listItem);
+  }
+
+  addListItem(listItem) {
+    let newListItem = {
+      quantity: listItem.quanity,
+      unit: listItem.unit,
+      product: listItem.product,
+      category: listItem.category,
+    };
+
+    this.setState({
+      listItems: this.state.listItems.concat(newListItem),
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <ToggleableListItemForm />
+        <ToggleableListItemForm onFormSubmit={this.handleFormSubmit} />
         <List 
           listItems={this.state.listItems}
         />
