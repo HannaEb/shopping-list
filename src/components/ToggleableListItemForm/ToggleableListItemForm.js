@@ -10,16 +10,22 @@ class ToggleableListItemForm extends React.Component {
         };
 
         this.handleFormOpen = this.handleFormOpen.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     handleFormOpen() {
         this.setState({ isOpen: true });
     }
 
+    handleFormSubmit(listItem) {
+        this.props.onFormSubmit(listItem);
+        this.setState({ isOpen: false })
+    }
+
     render() {
         if (this.state.isOpen) {
             return (
-                <ListItemForm />
+                <ListItemForm onFormSubmit={this.handleFormSubmit} />
             )
         } else {
             return (

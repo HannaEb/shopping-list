@@ -1,17 +1,63 @@
 import React from 'react';
 
 class ListItemForm extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: '',
+            unit: '',
+            product: '',
+            category: '',
+        };
+
+        this.handleQuantityChange = this.handleQuantityChange.bind(this);
+        this.handleUnitChange = this.handleUnitChange.bind(this);
+        this.handleProductChange = this.handleProductChange.bind(this);
+        this.handleCategoryChange = this.handleCategoryChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleQuantityChange(e) {
+        this.setState({ quantity: e.target.value });
+    };
+
+    handleUnitChange(e) {
+        this.setState({ unit: e.target.value });
+    };
+
+    handleProductChange(e) {
+        this.setState({ product: e.target.value });
+    };
+
+    handleCategoryChange(e) {
+        this.setState({ category: e.target.value });
+    };
+
+    handleSubmit() {
+        this.props.onFormSubmit({
+            quantity: this.state.quantity,
+            unit: this.state.unit,
+            product: this.state.product,
+            category: this.state.category,
+        })
+    }
+
     render() {
         return (
             <div>
                 <form>
                     <div>
                         <label>Quantity</label>
-                        <input type='number' />
+                        <input 
+                            type='number' 
+                            value={this.state.quantity} 
+                            onChange={this.handleQuantityChange}
+                            />
                     </div>
                     <div>
                         <label>Unit</label>
-                        <select>
+                        <select value={this.state.unit} onChange={this.handleUnitChange}>
                             <option>''</option>
                             <option>Kilograms</option>
                             <option>Grams</option>
@@ -19,11 +65,15 @@ class ListItemForm extends React.Component {
                     </div>
                     <div>
                         <label>Product</label>
-                        <input type='text' />
+                        <input 
+                            type='text' 
+                            value={this.state.product} 
+                            onChange={this.handleProductChange}
+                            />
                     </div>
                     <div>
-                        <label>Catergory</label>
-                        <select>
+                        <label>Category</label>
+                        <select value={this.state.category} onChange={this.handleCategoryChange}>
                             <option>Fresh</option>
                             <option>Bakery</option>
                             <option>Cupboard</option>
@@ -34,7 +84,7 @@ class ListItemForm extends React.Component {
                             <option>Other</option>
                         </select>
                     </div>
-                    <button>
+                    <button onClick={this.handleSubmit}>
                         Add
                     </button>
                 </form>
