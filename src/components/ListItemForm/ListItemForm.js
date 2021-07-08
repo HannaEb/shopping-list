@@ -12,7 +12,7 @@ class ListItemForm extends React.Component {
                     <div>
                         <label>Unit</label>
                         <select>
-                            <option>Item</option>
+                            <option>''</option>
                             <option>Kilograms</option>
                             <option>Grams</option>
                         </select>

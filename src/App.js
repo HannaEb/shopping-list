@@ -4,11 +4,33 @@ import ToggleableListItemForm from './components/ToggleableListItemForm/Toggleab
 import List from './components/List/List'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      listItems: [
+        {
+          quantity: '500',
+          unit: 'Grams',
+          product: 'Flour',
+          category: 'Cupboard',
+        },
+        {
+          quantity: '4',
+          unit: '',
+          product: 'Apples',
+          category: 'Fresh'
+        }
+      ]
+    }
+  }
   render() {
     return (
       <div className="App">
         <ToggleableListItemForm />
-        <List />
+        <List 
+          listItems={this.state.listItems}
+        />
       </div>
     );
   }
