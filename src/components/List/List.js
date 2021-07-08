@@ -3,18 +3,16 @@ import EditableListItem from '../EditableListItem/EditableListItem';
 
 class List extends React.Component {
     render() {
+        const listItems = this.props.listItems.map(listItem => (
+            <EditableListItem 
+                quantity={listItem.quantity}
+                unit={listItem.unit}
+                product={listItem.product}
+            />
+        ));
         return (
             <div>
-                <EditableListItem 
-                    quantity='500'
-                    unit='Grams'
-                    product='Flour'
-                />
-                <EditableListItem 
-                    quantity='4'
-                    unit='Item'
-                    product='Apples'
-                />
+                {listItems}
             </div>
         )
     }
