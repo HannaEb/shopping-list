@@ -9,6 +9,7 @@ class EditableListItem extends React.Component {
                 quantity={this.props.quantity}
                 unit={this.props.unit}
                 product={this.props.product}
+                onDelete={this.props.onDelete}
             />
         )
     }

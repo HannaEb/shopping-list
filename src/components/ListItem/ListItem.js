@@ -1,6 +1,16 @@
 import React from 'react';
 
 class ListItem extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    handleDelete() {
+        this.props.onDelete(this.props.id)
+    }
+
     render() {
         return (
             <div>
@@ -13,6 +23,9 @@ class ListItem extends React.Component {
                 <div>
                     {this.props.product}
                 </div>
+                <button onClick={this.handleDelete}>
+                    Delete 
+                </button>
             </div>
         )
     }

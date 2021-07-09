@@ -9,6 +9,7 @@ class List extends React.Component {
                 quantity={listItem.quantity}
                 unit={listItem.unit}
                 product={listItem.product}
+                onDelete={this.props.onDelete}
             />
         ));
         return (

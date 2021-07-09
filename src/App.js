@@ -29,6 +29,8 @@ class App extends React.Component {
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.addListItem = this.addListItem.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.deleteListItem = this.deleteListItem.bind(this);
   }
 
   handleFormSubmit(listItem) {
@@ -49,11 +51,22 @@ class App extends React.Component {
     })
   }
 
+  handleDelete(listItemId) {
+    this.deleteListItem(listItemId);
+  }
+
+  deleteListItem(listItemId) {
+    this.setState({
+      listItems: this.state.listItems.filter(listItem => listItemId !== listItem.id)
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <List 
           listItems={this.state.listItems}
+          onDelete={this.handleDelete}
         />
         <ToggleableListItemForm 
           onFormSubmit={this.handleFormSubmit} 
