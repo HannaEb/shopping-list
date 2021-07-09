@@ -5,6 +5,7 @@ class List extends React.Component {
     render() {
         const listItems = this.props.listItems.map(listItem => (
             <EditableListItem 
+                id={listItem.id}
                 quantity={listItem.quantity}
                 unit={listItem.unit}
                 product={listItem.product}

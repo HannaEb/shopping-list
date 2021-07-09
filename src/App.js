@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import ToggleableListItemForm from './components/ToggleableListItemForm/ToggleableListItemForm'
 import List from './components/List/List'
@@ -10,12 +11,14 @@ class App extends React.Component {
     this.state = {
       listItems: [
         {
+          id: uuidv4(),
           quantity: '500',
           unit: 'g',
           product: 'Flour',
           category: 'Cupboard',
         },
         {
+          id: uuidv4(),
           quantity: '4',
           unit: '',
           product: 'Apples',
@@ -34,6 +37,7 @@ class App extends React.Component {
 
   addListItem(listItem) {
     let newListItem = {
+      id: uuidv4(),
       quantity: listItem.quantity,
       unit: listItem.unit,
       product: listItem.product,
@@ -48,9 +52,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ToggleableListItemForm onFormSubmit={this.handleFormSubmit} />
         <List 
           listItems={this.state.listItems}
+        />
+        <ToggleableListItemForm 
+          onFormSubmit={this.handleFormSubmit} 
         />
       </div>
     );
