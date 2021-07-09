@@ -58,9 +58,11 @@ class ListItemForm extends React.Component {
                     <div>
                         <label>Unit</label>
                         <select value={this.state.unit} onChange={this.handleUnitChange}>
-                            <option>''</option>
-                            <option>Kilograms</option>
-                            <option>Grams</option>
+                            <option></option>
+                            <option>kg</option>
+                            <option>g</option>
+                            <option>l</option>
+                            <option>ml</option>
                         </select>
                     </div>
                     <div>

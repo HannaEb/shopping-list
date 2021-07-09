@@ -11,7 +11,7 @@ class App extends React.Component {
       listItems: [
         {
           quantity: '500',
-          unit: 'Grams',
+          unit: 'g',
           product: 'Flour',
           category: 'Cupboard',
         },
