@@ -23,6 +23,9 @@ class ListItem extends React.Component {
                 <div>
                     {this.props.product}
                 </div>
+                <button onClick={this.props.onEdit}>
+                    Edit 
+                </button>
                 <button onClick={this.handleDelete}>
                     Delete 
                 </button>
