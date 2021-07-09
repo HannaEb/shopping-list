@@ -4,7 +4,8 @@ import EditableListItem from '../EditableListItem/EditableListItem';
 class List extends React.Component {
     render() {
         const listItems = this.props.listItems.map(listItem => (
-            <EditableListItem 
+            <EditableListItem
+                key={listItem.id} 
                 id={listItem.id}
                 quantity={listItem.quantity}
                 unit={listItem.unit}
