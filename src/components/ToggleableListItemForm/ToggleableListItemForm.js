@@ -22,10 +22,17 @@ class ToggleableListItemForm extends React.Component {
         this.setState({ isOpen: false })
     }
 
+    handleFormClose() {
+        this.setState({ isOpen: false })
+    }
+
     render() {
         if (this.state.isOpen) {
             return (
-                <ListItemForm onFormSubmit={this.handleFormSubmit} />
+                <ListItemForm 
+                    onFormSubmit={this.handleFormSubmit} 
+                    onFormClose={this.handleFormClose}
+                />
             )
         } else {
             return (

@@ -43,6 +43,10 @@ class ListItemForm extends React.Component {
         })
     }
 
+    handleFormClose() {
+        this.props.onFormClose();
+    }
+
     render() {
         return (
             <div>
@@ -88,6 +92,9 @@ class ListItemForm extends React.Component {
                     </div>
                     <button onClick={this.handleSubmit}>
                         Add
+                    </button>
+                    <button onClick={this.handleFormClose}>
+                        Cancel
                     </button>
                 </form>
             </div>
