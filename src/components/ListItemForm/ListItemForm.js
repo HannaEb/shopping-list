@@ -36,15 +36,12 @@ class ListItemForm extends React.Component {
 
     handleSubmit() {
         this.props.onFormSubmit({
+            id: this.props.id,
             quantity: this.state.quantity,
             unit: this.state.unit,
             product: this.state.product,
             category: this.state.category,
         })
-    }
-
-    handleFormClose() {
-        this.props.onFormClose();
     }
 
     render() {
@@ -91,9 +88,9 @@ class ListItemForm extends React.Component {
                         </select>
                     </div>
                     <button onClick={this.handleSubmit}>
-                        Add
+                        Confirm
                     </button>
-                    <button onClick={this.handleFormClose}>
+                    <button onClick={this.props.onFormClose}>
                         Cancel
                     </button>
                 </form>

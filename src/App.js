@@ -27,13 +27,15 @@ class App extends React.Component {
       ]
     }
 
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleCreateFormSubmit = this.handleCreateFormSubmit.bind(this);
     this.addListItem = this.addListItem.bind(this);
+    this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
+    this.updateListItem = this.updateListItem.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
   }
 
-  handleFormSubmit(listItem) {
+  handleCreateFormSubmit(listItem) {
       this.addListItem(listItem);
   }
 
@@ -48,6 +50,27 @@ class App extends React.Component {
 
     this.setState({
       listItems: this.state.listItems.concat(newListItem),
+    })
+  }
+
+  handleEditFormSubmit(item) {
+    this.updateListItem(item);
+  }
+
+  updateListItem(item) {
+    this.setState({ 
+      listItems: this.state.listItems.map(listItem => {
+        if (listItem.id === item.id) {
+          return Object.assign({}, listItem, {
+            quantity: item.quantity,
+            unit: item.unit,
+            product: item.product,
+            category: item.category,
+          });
+        } else {
+          return listItem;
+        }
+      })
     })
   }
 
@@ -68,9 +91,10 @@ class App extends React.Component {
           listItems={this.state.listItems}
           onEdit={this.handleEdit}
           onDelete={this.handleDelete}
+          onFormSubmit={this.handleEditFormSubmit}
         />
         <ToggleableListItemForm 
-          onFormSubmit={this.handleFormSubmit} 
+          onFormSubmit={this.handleCreateFormSubmit} 
         />
       </div>
     );

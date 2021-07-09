@@ -11,6 +11,7 @@ class List extends React.Component {
                 unit={listItem.unit}
                 product={listItem.product}
                 category={listItem.category}
+                onFormSubmit={this.props.onFormSubmit}
                 onDelete={this.props.onDelete}
             />
         ));

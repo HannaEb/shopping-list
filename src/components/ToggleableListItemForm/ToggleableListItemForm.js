@@ -37,7 +37,7 @@ class ToggleableListItemForm extends React.Component {
         } else {
             return (
                 <button onClick={this.handleFormOpen}>
-                    Add
+                    Add Item
                 </button>
              )
         }
