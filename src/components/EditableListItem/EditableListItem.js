@@ -14,6 +14,7 @@ class EditableListItem extends React.Component {
         this.handleClose = this.handleClose.bind(this);
         this.openForm = this.openForm.bind(this);
         this.closeForm = this.closeForm.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleEdit() {

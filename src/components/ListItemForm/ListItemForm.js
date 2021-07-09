@@ -87,7 +87,7 @@ class ListItemForm extends React.Component {
                             <option>Other</option>
                         </select>
                     </div>
-                    <button onClick={this.handleSubmit}>
+                    <button type='button' onClick={this.handleSubmit}>
                         Confirm
                     </button>
                     <button onClick={this.props.onFormClose}>

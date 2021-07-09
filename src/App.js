@@ -89,7 +89,6 @@ class App extends React.Component {
       <div className="App">
         <List 
           listItems={this.state.listItems}
-          onEdit={this.handleEdit}
           onDelete={this.handleDelete}
           onFormSubmit={this.handleEditFormSubmit}
         />
