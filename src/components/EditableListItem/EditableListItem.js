@@ -25,7 +25,13 @@ class EditableListItem extends React.Component {
     render() {
         if (this.state.formOpen) {
             return (
-                <ListItemForm />
+                <ListItemForm 
+                    id={this.props.id}
+                    quantity={this.props.quantity}
+                    unit={this.props.unit}
+                    product={this.props.product}
+                    category={this.props.category}
+                />
             )
         } else {
             return (

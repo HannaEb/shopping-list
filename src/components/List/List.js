@@ -10,6 +10,7 @@ class List extends React.Component {
                 quantity={listItem.quantity}
                 unit={listItem.unit}
                 product={listItem.product}
+                category={listItem.category}
                 onDelete={this.props.onDelete}
             />
         ));

@@ -5,10 +5,10 @@ class ListItemForm extends React.Component {
         super(props);
 
         this.state = {
-            quantity: '',
-            unit: '',
-            product: '',
-            category: '',
+            quantity: this.props.quantity || '',
+            unit: this.props.unit || '',
+            product: this.props.product || '',
+            category: this.props.category || '',
         };
 
         this.handleQuantityChange = this.handleQuantityChange.bind(this);
