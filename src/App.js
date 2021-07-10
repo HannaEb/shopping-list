@@ -19,6 +19,27 @@ class App extends React.Component {
         },
         {
           id: uuidv4(),
+          quantity: '500',
+          unit: 'g',
+          product: 'Butter',
+          category: 'Chilled',
+        },
+        {
+          id: uuidv4(),
+          quantity: '500',
+          unit: '',
+          product: 'Pears',
+          category: 'Fresh',
+        },
+        {
+          id: uuidv4(),
+          quantity: '500',
+          unit: '',
+          product: 'Napkins',
+          category: 'Household',
+        },
+        {
+          id: uuidv4(),
           quantity: '4',
           unit: '',
           product: 'Apples',
