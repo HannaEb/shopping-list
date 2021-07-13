@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ToggleableListItemForm from './components/ToggleableListItemForm/ToggleableListItemForm'
 import List from './components/List/List'
 
