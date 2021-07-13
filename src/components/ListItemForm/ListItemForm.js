@@ -1,4 +1,5 @@
 import React from 'react';
+import {Container, Form, Row, Col, Button } from 'react-bootstrap';
 
 class ListItemForm extends React.Component {
     constructor(props) {
@@ -47,53 +48,63 @@ class ListItemForm extends React.Component {
     render() {
         return (
             <div>
-                <form>
-                    <div>
-                        <label>Quantity</label>
-                        <input 
-                            type='text' 
-                            value={this.state.quantity} 
-                            onChange={this.handleQuantityChange}
+                <Container>
+                <Form>
+                    <Form.Group as={Row} controlId='formQuantity'>
+                        <Form.Label column sm={2}>Quantity</Form.Label>
+                        <Col sm={10}>
+                            <Form.Control
+                                type='text' 
+                                value={this.state.quantity} 
+                                onChange={this.handleQuantityChange}
                             />
-                    </div>
-                    <div>
-                        <label>Unit</label>
-                        <select value={this.state.unit} onChange={this.handleUnitChange}>
-                            <option></option>
-                            <option>kg</option>
-                            <option>g</option>
-                            <option>l</option>
-                            <option>ml</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Product</label>
-                        <input 
-                            type='text' 
-                            value={this.state.product} 
-                            onChange={this.handleProductChange}
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId='formUnit'>
+                        <Form.Label column sm={2}>Unit</Form.Label>
+                        <Col sm={10}>
+                            <Form.Control as='select' value={this.state.unit} onChange={this.handleUnitChange}>
+                                <option></option>
+                                <option>kg</option>
+                                <option>g</option>
+                                <option>l</option>
+                                <option>ml</option>
+                            </Form.Control>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId='formProduct'>
+                        <Form.Label column sm={2}>Product</Form.Label>
+                        <Col sm={10}>
+                            <Form.Control 
+                                type='text' 
+                                value={this.state.product} 
+                                onChange={this.handleProductChange}
                             />
-                    </div>
-                    <div>
-                        <label>Category</label>
-                        <select value={this.state.category} onChange={this.handleCategoryChange}>
-                            <option>Fresh</option>
-                            <option>Bakery</option>
-                            <option>Cupboard</option>
-                            <option>Frozen</option>
-                            <option>Chilled</option>
-                            <option>Drinks</option>
-                            <option>Household</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <button type='button' onClick={this.handleSubmit}>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId='formCategory'>
+                        <Form.Label column sm={2}>Category</Form.Label>
+                        <Col sm={10}>
+                            <Form.Control as='select' value={this.state.category} onChange={this.handleCategoryChange}>
+                                <option>Fresh</option>
+                                <option>Bakery</option>
+                                <option>Cupboard</option>
+                                <option>Frozen</option>
+                                <option>Chilled</option>
+                                <option>Drinks</option>
+                                <option>Household</option>
+                                <option>Other</option>
+                            </Form.Control>
+                        </Col>
+                    </Form.Group>
+                    <Button type='button' onClick={this.handleSubmit}>
                         Confirm
-                    </button>
-                    <button onClick={this.props.onFormClose}>
+                    </Button>
+                    <Button type='submit' onClick={this.props.onFormClose}>
                         Cancel
-                    </button>
-                </form>
+                    </Button>
+                </Form>
+                </Container>
             </div>
         )
     }
