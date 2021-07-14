@@ -1,5 +1,7 @@
 import React from 'react';
+import './ListItemForm.css';
 import {Container, Form, Row, Col, Button } from 'react-bootstrap';
+
 
 class ListItemForm extends React.Component {
     constructor(props) {
@@ -51,8 +53,8 @@ class ListItemForm extends React.Component {
                 <Container>
                 <Form>
                     <Form.Group as={Row} controlId='formQuantity'>
-                        <Form.Label column sm={2}>Quantity</Form.Label>
-                        <Col sm={10}>
+                        <Form.Label column sm={3}>Quantity</Form.Label>
+                        <Col sm={9}>
                             <Form.Control
                                 type='text' 
                                 value={this.state.quantity} 
@@ -61,8 +63,8 @@ class ListItemForm extends React.Component {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId='formUnit'>
-                        <Form.Label column sm={2}>Unit</Form.Label>
-                        <Col sm={10}>
+                        <Form.Label column sm={3}>Unit</Form.Label>
+                        <Col sm={9}>
                             <Form.Control as='select' value={this.state.unit} onChange={this.handleUnitChange}>
                                 <option></option>
                                 <option>kg</option>
@@ -73,8 +75,8 @@ class ListItemForm extends React.Component {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId='formProduct'>
-                        <Form.Label column sm={2}>Product</Form.Label>
-                        <Col sm={10}>
+                        <Form.Label column sm={3}>Product</Form.Label>
+                        <Col sm={9}>
                             <Form.Control 
                                 type='text' 
                                 value={this.state.product} 
@@ -83,8 +85,8 @@ class ListItemForm extends React.Component {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId='formCategory'>
-                        <Form.Label column sm={2}>Category</Form.Label>
-                        <Col sm={10}>
+                        <Form.Label column sm={3}>Category</Form.Label>
+                        <Col sm={9}>
                             <Form.Control as='select' value={this.state.category} onChange={this.handleCategoryChange}>
                                 <option>Fresh</option>
                                 <option>Bakery</option>

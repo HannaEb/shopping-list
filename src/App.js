@@ -2,6 +2,8 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row } from 'react-bootstrap';
+import Header from './components/Header/Header';
 import ToggleableListItemForm from './components/ToggleableListItemForm/ToggleableListItemForm'
 import List from './components/List/List'
 
@@ -109,14 +111,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <List 
-          listItems={this.state.listItems}
-          onDelete={this.handleDelete}
-          onFormSubmit={this.handleEditFormSubmit}
-        />
-        <ToggleableListItemForm 
-          onFormSubmit={this.handleCreateFormSubmit} 
-        />
+        <Container>
+          <Row className='justify-content-center'>
+            <Header />
+          </Row>
+          <Row className='justify-content-center'>
+            <List 
+              listItems={this.state.listItems}
+              onDelete={this.handleDelete}
+              onFormSubmit={this.handleEditFormSubmit}
+            />
+          </Row>
+          <Row className='justify-content-center'>
+            <ToggleableListItemForm 
+              onFormSubmit={this.handleCreateFormSubmit} 
+            />
+          </Row>
+        </Container>
       </div>
     );
   }
