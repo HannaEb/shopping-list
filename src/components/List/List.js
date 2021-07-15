@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListGroup } from 'react-bootstrap';
 import EditableListItem from '../EditableListItem/EditableListItem';
 
 class List extends React.Component {
@@ -24,10 +25,13 @@ class List extends React.Component {
                 onDelete={this.props.onDelete}
             />
         ));
-        
+    
+
         return (
             <div>
-                {listItems}
+                <ListGroup>
+                    {listItems}
+                </ListGroup>
             </div>
         )
     }

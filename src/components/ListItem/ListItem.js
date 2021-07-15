@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, ListGroup } from 'react-bootstrap';
 
 class ListItem extends React.Component {
     constructor(props) {
@@ -14,21 +15,17 @@ class ListItem extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    {this.props.quantity}
-                </div>
-                <div>
-                    {this.props.unit}
-                </div>
-                <div>
-                    {this.props.product}
-                </div>
-                <button onClick={this.props.onEdit}>
-                    Edit 
-                </button>
-                <button onClick={this.handleDelete}>
-                    Delete 
-                </button>
+                <ListGroup.Item>
+                        {this.props.quantity}
+                        {this.props.unit}
+                        {this.props.product}
+                        <Button className='btn-primary' size='sm' onClick={this.props.onEdit}>
+                            &#x270E;
+                        </Button>
+                        <Button className='btn-secondary' size='sm' onClick={this.handleDelete}>
+                            &#xff38; 
+                        </Button>
+                </ListGroup.Item>
             </div>
         )
     }
